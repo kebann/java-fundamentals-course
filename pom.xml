@@ -26,6 +26,7 @@
         <module>java-fundamentals-util</module>
         <module>lesson-demo</module>
         <module>homework</module>
+        <module>hw13</module>
     </modules>
 
     <dependencies>
