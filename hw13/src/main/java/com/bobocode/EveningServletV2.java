@@ -9,8 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebServlet("/v1/evening")
-public class EveningServlet extends HttpServlet {
+@WebServlet("/v2/evening")
+public class EveningServletV2 extends HttpServlet {
 
     private static final String NAME_QUERY_PARAM = "name";
     private static final String DEFAULT_NAME = "buddy";
