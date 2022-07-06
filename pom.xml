@@ -27,6 +27,7 @@
         <module>lesson-demo</module>
         <module>homework</module>
         <module>hw13</module>
+        <module>di</module>
     </modules>
 
     <dependencies>
