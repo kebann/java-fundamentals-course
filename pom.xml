@@ -28,6 +28,7 @@
         <module>homework</module>
         <module>hw13</module>
         <module>di</module>
+        <module>nasa-service</module>
     </modules>
 
     <dependencies>
