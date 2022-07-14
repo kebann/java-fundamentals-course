@@ -6,6 +6,7 @@ import com.bobocode.nasa.model.NasaResponse;
 import com.bobocode.nasa.model.Photo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -25,6 +26,7 @@ public class NasaPictureService {
     @Value("${nasa.base.url}")
     private String nasaBaseUrl;
 
+    @Cacheable(value = "photos", key = "#queryParams.sol")
     public Optional<Photo> findLargestPicture(NasaQueryParams queryParams) {
         try {
             var roverPhotos = getCuriosityRoverPhotos(queryParams);
