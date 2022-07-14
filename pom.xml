@@ -29,6 +29,7 @@
         <module>hw13</module>
         <module>di</module>
         <module>nasa-service</module>
+        <module>hw18-custom-bpp</module>
     </modules>
 
     <dependencies>
