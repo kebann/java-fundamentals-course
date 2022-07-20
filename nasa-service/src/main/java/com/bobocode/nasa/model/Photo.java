@@ -13,7 +13,7 @@ public class Photo {
 
     private Integer id;
     @JsonProperty("img_src")
-    private String photoUrl;
+    private String url;
     @JsonIgnore
     private Long size;
 }

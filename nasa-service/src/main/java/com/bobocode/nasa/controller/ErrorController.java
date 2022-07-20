@@ -1,7 +1,7 @@
 package com.bobocode.nasa.controller;
 
 import com.bobocode.nasa.exception.NasaException;
-import com.bobocode.nasa.exception.NoPictureFound;
+import com.bobocode.nasa.exception.NoPhotoFound;
 import com.bobocode.nasa.model.ErrorTO;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -13,9 +13,9 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 @ControllerAdvice
 public class ErrorController {
 
-    @ExceptionHandler({NoPictureFound.class})
+    @ExceptionHandler({NoPhotoFound.class})
     public ResponseEntity<ErrorTO> handleNoPictureFoundException(
-            NoPictureFound e) {
+            NoPhotoFound e) {
         var error = new ErrorTO(e.getMessage());
         return ResponseEntity.badRequest().body(error);
     }

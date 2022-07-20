@@ -20,14 +20,14 @@ import static java.util.Comparator.comparing;
 
 @Service
 @RequiredArgsConstructor
-public class NasaPictureService {
+public class NasaPhotoService {
 
     private final RestTemplate restTemplate;
     @Value("${nasa.base.url}")
     private String nasaBaseUrl;
 
     @Cacheable(value = "photos", key = "#queryParams.sol")
-    public Optional<Photo> findLargestPicture(NasaQueryParams queryParams) {
+    public Optional<Photo> findLargestPhoto(NasaQueryParams queryParams) {
         try {
             var roverPhotos = getCuriosityRoverPhotos(queryParams);
             return roverPhotos
@@ -41,7 +41,7 @@ public class NasaPictureService {
     }
 
     private Photo enrichPhotoWithSize(Photo photo) {
-        var headers = restTemplate.headForHeaders(photo.getPhotoUrl());
+        var headers = restTemplate.headForHeaders(photo.getUrl());
         URI location = headers.getLocation();
 
         if (location != null) {
